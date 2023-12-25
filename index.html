@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        
+        #game-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        
+    </style>
+</head>
+<body> 
+    <div id="game-container">
+        <h1>Number Guessing Game</h1>
+        <p>Guess a number between 1 and 10:</p>
+        <input type="number" id="user-input">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+// Generate a random number between 1 and 10
+const secretNumber = Math.floor(Math.random() * 10) + 1;
+
+function checkGuess() {
+    // Get user input
+    const userInput = document.getElementById('user-input').value;
+
+    // Check if the guess is correct
+    if (userInput === '') {
+        alert('Please enter a number!');
+    } else {
+        const userGuess = parseInt(userInput);
+        if (userGuess === secretNumber) {
+            displayResult('Congratulations! You guessed the correct number.');
+        } else {
+            displayResult(`Sorry, the correct number was ${secretNumber}. Try again!`);
+        }
+    }
+}
+
+function displayResult(message) {
+    document.getElementById('result').innerText = message;
+}
+       function showAlert() {
+            alert('Hello, Sufay Sufer!');
+        }
+        
+    </script>
+    
+</body>
+</html>
